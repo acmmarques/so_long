@@ -1,7 +1,8 @@
 NAME = so_long
 
 # Source files
-SRCS = so_long.c
+SRCS = so_long.c input_validator.c map_parser.c helper.c \
+			 map_validator.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -19,7 +20,7 @@ RESET = \033[0m
 LIBFT_DIR = libft
 LIBFT_LIB = $(LIBFT_DIR)/libft.a
 LIBFT_FLAGS = -L$(LIBFT_DIR) -lft
-LIB_INC = -I $(LIBFT_DIR)
+LIBFT_INC = -I $(LIBFT_DIR)
 
 # FT_Printf
 FT_PRINTF_DIR = ft_printf
