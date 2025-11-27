@@ -1,0 +1,43 @@
+/* XPM */
+static char *grass[] = {
+/* columns rows colors chars-per-pixel */
+"32 32 4 1 ",
+"  c None",
+". c #006400",
+"g c #008000",
+"l c #32CD32",
+/* pixels */
+"                                ",
+"                                ",
+"                                ",
+"                                ",
+"             .                  ",
+"            .g.                 ",
+"           .glg.                ",
+"          .glglg.       .       ",
+"         .glglglg.     .g.      ",
+"        .glglglglg.   .glg.     ",
+"       .glglglglglg. .glglg.    ",
+"      .glglglglglglg.glglglg.   ",
+"     .glglglglglglglglglglglg.  ",
+"    .glglglglglglglglglglglglg. ",
+"   .glglglglglglglglglglglglglg.",
+"  .glglglglglglglglglglglglglgl.",
+" .glglglglglglglglglglglglglglg.",
+" .glglglglglglglglglglglglglglg.",
+" .glglglglglglglglglglglglglglg.",
+"  .glglglglglglglglglglglglglg. ",
+"   .glglglglglglglglglglglglg.  ",
+"    .........................   ",
+"                                ",
+"                                ",
+"                                ",
+"                                ",
+"                                ",
+"                                ",
+"                                ",
+"                                ",
+"                                ",
+"                                "
+};
+

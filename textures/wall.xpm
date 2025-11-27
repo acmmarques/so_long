@@ -1,0 +1,43 @@
+/* XPM */
+static char *fence[] = {
+/* columns rows colors chars-per-pixel */
+"32 32 4 1 ",
+"  c None",
+". c #3E2723",
+"w c #8B4513",
+"d c #5D4037",
+/* pixels */
+"                                ",
+"   ...     ...     ...     ...  ",
+"   .w.     .w.     .w.     .w.  ",
+"   .d.     .d.     .d.     .d.  ",
+"   .w.     .w.     .w.     .w.  ",
+"   .d.     .d.     .d.     .d.  ",
+"   .w.......w.......w.......w.  ",
+"   .wwwwwwwwwwwwwwwwwwwwwwwwd.  ",
+"   .ddddddddddddddddddddddddd.  ",
+"   .w.......w.......w.......w.  ",
+"   .d.     .d.     .d.     .d.  ",
+"   .w.     .w.     .w.     .w.  ",
+"   .d.     .d.     .d.     .d.  ",
+"   .w.     .w.     .w.     .w.  ",
+"   .d.     .d.     .d.     .d.  ",
+"   .w.     .w.     .w.     .w.  ",
+"   .d.     .d.     .d.     .d.  ",
+"   .w.......w.......w.......w.  ",
+"   .wwwwwwwwwwwwwwwwwwwwwwwwd.  ",
+"   .ddddddddddddddddddddddddd.  ",
+"   .w.......w.......w.......w.  ",
+"   .d.     .d.     .d.     .d.  ",
+"   .w.     .w.     .w.     .w.  ",
+"   .d.     .d.     .d.     .d.  ",
+"   .w.     .w.     .w.     .w.  ",
+"   .d.     .d.     .d.     .d.  ",
+"   .w.     .w.     .w.     .w.  ",
+"   .d.     .d.     .d.     .d.  ",
+"   .w.     .w.     .w.     .w.  ",
+"   ...     ...     ...     ...  ",
+"                                ",
+"                                "
+};
+
