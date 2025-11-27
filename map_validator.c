@@ -6,7 +6,7 @@
 /*   By: andcardo <andcardo@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 19:58:56 by andcardo          #+#    #+#             */
-/*   Updated: 2025/11/27 01:25:56 by andcardo         ###   ########.fr       */
+/*   Updated: 2025/11/27 15:11:21 by andcardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,10 @@ static int  count_map_elements(t_game *game)
 
 static int validate_map_content(t_game *game)
 {
-  if (!count_map_elements)
+  if (!count_map_elements(game))
     return(0);
-  if (game->player_count > 1 ||
-      game->exits_count > 1 ||
+  if (game->players_count != 1 ||
+      game->exits_count != 1 ||
       game->collectibles_count < 1)
     return (0);
   return (1);
@@ -84,6 +84,28 @@ static int validate_map_content(t_game *game)
 
 static int validate_map_path(t_game *game)
 {
+  char **map_copy;
+  int i;
+  int j;
+
+  map_copy = duplicate_map(game);
+  flood_fill(map_copy, game, game->player_x, game->player_y);
+  i = 0;
+  while (i < game->height)
+  {
+    j = 0;
+    while (j < game->width)
+    {
+      if (map_copy[i][j] == 'C' || map_copy[i][j] == 'E')
+      {
+        free_array(map_copy, game->height);
+        return (0);
+      }
+      j++;
+    }
+    i++;
+  }
+  free_array(map_copy, game->height);
   return (1);
 }
 

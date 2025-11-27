@@ -1,8 +1,8 @@
 NAME = so_long
 
 # Source files
-SRCS = so_long.c input_validator.c map_parser.c helper.c \
-			 map_validator.c
+SRCS = so_long.c input_validator.c map_parser.c helper.c helper_two.c \
+			 map_validator.c 
 
 OBJS = $(SRCS:.c=.o)
 

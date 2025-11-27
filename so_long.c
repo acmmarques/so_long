@@ -18,8 +18,6 @@ int main(int argc, char *argv[])
     return (1);
   }
 
-  ft_printf("game height: %i\n", game.height);
-  ft_printf("game len: %i\n", game.width);
   free_map(&game);
   ft_printf("End of program\n");
   return(0);
