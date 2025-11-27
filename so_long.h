@@ -15,6 +15,8 @@ typedef struct s_game
   int   player_x;
   int   player_y;
   int   collectibles_count;
+  int   players_count;
+  int   exits_count;
   int   player_moves;
   int   exit_reached;
 } t_game;
