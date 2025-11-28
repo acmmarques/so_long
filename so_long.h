@@ -16,6 +16,10 @@
 # define KEY_DOWN 65364
 # define KEY_LEFT 65361
 # define KEY_RIGHT 65363
+# define ON_KEYDOWN     2
+# define ON_KEYUP       3
+# define ON_DESTROY     17
+# define NO_EVENT_MASK  0
 
 typedef struct s_game
 {
@@ -50,5 +54,6 @@ void  flood_fill(char **grid, t_game *game, int x, int y);
 int  close_game(t_game *game);
 int initialize_game(t_game *game);
 int render_game(t_game *game);
+int handle_keyboard_input(int keysym, t_game *game);
 
 #endif

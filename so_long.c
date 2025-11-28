@@ -17,9 +17,8 @@ int main(int argc, char *argv[])
     close_game(&game);
   if (!render_game(&game))
     close_game(&game);
-
-  //mlx_loop(game.mlx_ptr);
-  close_game(&game);
-  ft_printf("End of program\n");
+  mlx_key_hook(game.win_ptr, handle_keyboard_input, &game);
+  mlx_hook(game.win_ptr, ON_DESTROY, NO_EVENT_MASK, close_game, &game);
+  mlx_loop(game.mlx_ptr);
   return(0);
 }
