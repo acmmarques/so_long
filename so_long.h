@@ -2,8 +2,11 @@
 # define SO_LONG
 
 # include <fcntl.h>
+# include "mlx.h"
 # include "ft_printf.h"
 # include "libft.h"
+
+# define TILE_SIZE 32
 
 typedef struct s_game
 {
@@ -35,5 +38,8 @@ void  free_array(char **array, int height);
 int   validate_map(t_game *game);
 char **duplicate_map(t_game *game);
 void  flood_fill(char **grid, t_game *game, int x, int y);
+int  close_game(t_game *game);
+int initialize_game(t_game *game);
+int render_game(t_game *game);
 
 #endif

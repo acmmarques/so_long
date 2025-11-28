@@ -2,7 +2,7 @@ NAME = so_long
 
 # Source files
 SRCS = so_long.c input_validator.c map_parser.c helper.c helper_two.c \
-			 map_validator.c 
+			 map_validator.c game_initializor.c game_render.c
 
 OBJS = $(SRCS:.c=.o)
 
