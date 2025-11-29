@@ -6,7 +6,7 @@
 /*   By: andcardo <andcardo@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 12:37:08 by andcardo          #+#    #+#             */
-/*   Updated: 2025/11/29 17:24:31 by andcardo         ###   ########.fr       */
+/*   Updated: 2025/11/29 17:57:47 by andcardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ static char	*read_file_content(char *filename)
 	}
 	free(temp_buffer);
 	close (fd);
+	//é preciso reduzir o tamanho desta function
 	return (big_str);
 }
 
