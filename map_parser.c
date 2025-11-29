@@ -39,7 +39,6 @@ static char	*read_file_content(char *filename)
 	}
 	free(temp_buffer);
 	close (fd);
-	//é preciso reduzir o tamanho desta function
 	return (big_str);
 }
 
