@@ -1,5 +1,17 @@
-#ifndef SO_LONG
-# define SO_LONG
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: andcardo <andcardo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/29 17:09:02 by andcardo          #+#    #+#             */
+/*   Updated: 2025/11/29 17:16:57 by andcardo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef SO_LONG_H
+# define SO_LONG_H
 
 # include <fcntl.h>
 # include "mlx.h"
@@ -23,37 +35,37 @@
 
 typedef struct s_game
 {
-  void  *mlx_ptr;
-  void  *win_ptr;
-  char  **map;
-  int   height;
-  int   width;
-  int   player_x;
-  int   player_y;
-  int   collectibles_count;
-  int   players_count;
-  int   exits_count;
-  void  *wall_img;
-  void  *floor_img;
-  void  *player_img;
-  void  *collectible_img;
-  void  *exit_img;
-  int   player_moves;
-  int   exit_reached;
-} t_game;
+	void	*mlx_ptr;
+	void	*win_ptr;
+	char	**map;
+	int		height;
+	int		width;
+	int		player_x;
+	int		player_y;
+	int		collectibles_count;
+	int		players_count;
+	int		exits_count;
+	void	*wall_img;
+	void	*floor_img;
+	void	*player_img;
+	void	*collectible_img;
+	void	*exit_img;
+	int		player_moves;
+	int		exit_reached;
+}	t_game;
 
-int   validate_input(int argc, char *filename);
-int   parse_map(char *filename, t_game *game);
-void  print_error(char *message);
-char  *ft_strjoin_free(char *s1, char *s2);
-void  free_map(t_game *game);
-void  free_array(char **array, int height);
-int   validate_map(t_game *game);
-char **duplicate_map(t_game *game);
-void  flood_fill(char **grid, t_game *game, int x, int y);
-int  close_game(t_game *game);
-int initialize_game(t_game *game);
-int render_game(t_game *game);
-int handle_keyboard_input(int keysym, t_game *game);
+int		validate_input(int argc, char *filename);
+int		parse_map(char *filename, t_game *game);
+void	print_error(char *message);
+char	*ft_strjoin_free(char *s1, char *s2);
+void	free_map(t_game *game);
+void	free_array(char **array, int height);
+int		validate_map(t_game *game);
+char	**duplicate_map(t_game *game);
+void	flood_fill(char **grid, t_game *game, int x, int y);
+int		close_game(t_game *game);
+int		initialize_game(t_game *game);
+int		render_game(t_game *game);
+int		handle_keyboard_input(int keysym, t_game *game);
 
 #endif
