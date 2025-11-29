@@ -12,15 +12,15 @@
 
 #include "so_long.h"
 
-void  flood_fill(char **grid, t_game *game, int x, int y)
+void	flood_fill(char **grid, t_game *game, int x, int y)
 {
-  if (x < 0 || y < 0 || x >= game->width || y >= game->height)
-    return;
-  if (grid[y][x] == 'X' || grid[y][x] == '1')
-    return;
-  grid[y][x] = 'X';
-  flood_fill(grid, game, x + 1, y);
-  flood_fill(grid, game, x - 1, y);
-  flood_fill(grid, game, x, y + 1);
-  flood_fill(grid, game, x, y - 1);
+	if (x < 0 || y < 0 || x >= game->width || y >= game->height)
+		return ;
+	if (grid[y][x] == 'X' || grid[y][x] == '1')
+		return ;
+	grid[y][x] = 'X';
+	flood_fill(grid, game, x + 1, y);
+	flood_fill(grid, game, x - 1, y);
+	flood_fill(grid, game, x, y + 1);
+	flood_fill(grid, game, x, y - 1);
 }
