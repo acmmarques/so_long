@@ -16,9 +16,9 @@ void	print_error(char *message)
 {
 	if (!message)
 		return ;
-	(void)write(2, "Error\n", 6);
-	(void)write(2, message, ft_strlen(message));
-	(void)write(2, "\n", 1);
+	print_to_fd("Error\n", 2);
+	print_to_fd(message, 2);
+	print_to_fd("\n", 2);
 }
 
 char	*ft_strjoin_free(char *s1, char *s2)

@@ -9,7 +9,7 @@ OBJS = $(SRCS:.c=.o)
 
 # Compiler and flags
 CC = cc
-CFLAGS = 
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 # Colors for pretty output

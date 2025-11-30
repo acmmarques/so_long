@@ -66,6 +66,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 int		validate_input(int argc, char *filename);
 int		parse_map(char *filename, t_game *game);
 void	print_error(char *message);
+void	print_to_fd(char *str, int fd);
 char	*ft_strjoin_free(char *s1, char *s2);
 void	free_map(t_game *game);
 void	free_array(char **array, int height);

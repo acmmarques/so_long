@@ -44,9 +44,9 @@ static void	print_player_moves(int moves)
 	char	*number_string;
 
 	number_string = ft_itoa(moves);
-	(void)write(1, "Moves: ", 7);
-	(void)write(1, number_string, ft_strlen(number_string));
-	(void)write(1, "\n", 1);
+	print_to_fd("Moves: ", 1);
+	print_to_fd(number_string, 1);
+	print_to_fd("\n", 1);
 }
 
 static void	move_player(t_game *game, int next_x, int next_y)
@@ -63,7 +63,7 @@ static void	move_player(t_game *game, int next_x, int next_y)
 	}
 	if (next_tile == 'E' && game->collectibles_count == 0)
 	{
-		(void)write(1, "You won! ", 9);
+		print_to_fd("You won!", 1);
 		game->player_moves++;
 		print_player_moves(game->player_moves);
 		close_game(game);

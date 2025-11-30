@@ -69,3 +69,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+void	print_to_fd(char *str, int fd)
+{
+	if (write(fd, str, ft_strlen(str)) == -1)
+		return ;
+}
