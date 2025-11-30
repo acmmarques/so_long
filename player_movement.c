@@ -12,6 +12,43 @@
 
 #include "so_long.h"
 
+static void	update_positions_on_map(t_game *game, int next_x, int next_y)
+{
+	char	current_tile;
+	char	next_tile;
+
+	current_tile = game->map[game->player_y][game->player_x];
+	next_tile = game->map[next_y][next_x];
+	if (next_tile == 'E')
+	{
+		game->map[game->player_y][game->player_x] = '0';
+		game->map[next_y][next_x] = 'R';
+	}
+	else if (current_tile == 'R')
+	{
+		game->map[game->player_y][game->player_x] = 'E';
+		game->map[next_y][next_x] = 'P';
+	}
+	else
+	{
+		game->map[game->player_y][game->player_x] = '0';
+		game->map[next_y][next_x] = 'P';
+	}
+	game->player_y = next_y;
+	game->player_x = next_x;
+	game->player_moves++;
+}
+
+static void	print_player_moves(int moves)
+{
+	char	*number_string;
+
+	number_string = ft_itoa(moves);
+	(void)write(1, "Moves: ", 7);
+	(void)write(1, number_string, ft_strlen(number_string));
+	(void)write(1, "\n", 1);
+}
+
 static void	move_player(t_game *game, int next_x, int next_y)
 {
 	char	next_tile;
@@ -24,21 +61,15 @@ static void	move_player(t_game *game, int next_x, int next_y)
 		game->collectibles_count--;
 		game->map[next_y][next_x] = '0';
 	}
-	if (next_tile == 'E')
+	if (next_tile == 'E' && game->collectibles_count == 0)
 	{
-		if (game->collectibles_count == 0)
-		{
-			ft_printf("You won! Moves: %i\n", game->player_moves + 1);
-			close_game(game);
-		}
-		return ;
+		(void)write(1, "You won! ", 9);
+		game->player_moves++;
+		print_player_moves(game->player_moves);
+		close_game(game);
 	}
-	game->map[game->player_y][game->player_x] = '0';
-	game->map[next_y][next_x] = 'P';
-	game->player_y = next_y;
-	game->player_x = next_x;
-	game->player_moves++;
-	ft_printf("Moves: %i\n", game->player_moves + 1);
+	update_positions_on_map(game, next_x, next_y);
+	print_player_moves(game->player_moves);
 	render_game(game);
 }
 

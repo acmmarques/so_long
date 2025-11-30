@@ -4,7 +4,7 @@ static char *goat_on_barn[] = {
 "32 32 8 1 ",
 "  c #5C4033",  // Dirt (Corners)
 ". c #3E2723",  // Barn Frame
-"r c #5C4033",  // Dirt
+"r c #8B0000",  // Barn Red
 "w c #DDDDDD",  // Barn White
 "W c #FFFFFF",  // Goat White
 "X c #111111",  // Goat Black

@@ -36,6 +36,8 @@ int	render_game(t_game *game)
 				put_image(game, game->player_img, j, i);
 			else if (game->map[i][j] == 'C')
 				put_image(game, game->collectible_img, j, i);
+			else if (game->map[i][j] == 'R')
+				put_image(game, game->player_on_exit_img, j, i);
 			else if (game->map[i][j] == 'E')
 				put_image(game, game->exit_img, j, i);
 			j++;

@@ -2,7 +2,7 @@
 static char *grass[] = {
 /* columns rows colors chars-per-pixel */
 "32 32 4 1 ",
-"  c None",
+"  c #5C4033",
 ". c #006400",
 "g c #008000",
 "l c #32CD32",

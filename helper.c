@@ -14,7 +14,11 @@
 
 void	print_error(char *message)
 {
-	ft_printf("Error\n%s\n", message);
+	if (!message)
+		return ;
+	(void)write(2, "Error\n", 6);
+	(void)write(2, message, ft_strlen(message));
+	(void)write(2, "\n", 1);
 }
 
 char	*ft_strjoin_free(char *s1, char *s2)

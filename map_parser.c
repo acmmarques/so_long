@@ -24,10 +24,7 @@ static char	*read_file_content(char *filename)
 		return (NULL);
 	temp_buffer = malloc(sizeof(char) * 101);
 	if (!temp_buffer)
-	{
-		close(fd);
-		return (NULL);
-	}
+		return (close(fd), NULL);
 	big_str = ft_strdup("");
 	while (1)
 	{

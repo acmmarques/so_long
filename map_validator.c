@@ -19,13 +19,6 @@ static int	validate_map_structure(t_game *game)
 	if (game->height == 0)
 		return (0);
 	i = 0;
-	while (i < game->height)
-	{
-		if ((int)ft_strlen(game->map[i]) != game-> width)
-			return (0);
-		i++;
-	}
-	i = 0;
 	while (i < game->width)
 	{
 		if (game->map[0][i] != '1' || game->map[game->height - 1][i] != '1')
@@ -35,6 +28,8 @@ static int	validate_map_structure(t_game *game)
 	i = 0;
 	while (i < game->height)
 	{
+		if ((int)ft_strlen(game->map[i]) != game-> width)
+			return (0);
 		if (game->map[i][0] != '1' || game->map[i][game->width - 1] != '1')
 			return (0);
 		i++;
@@ -58,8 +53,7 @@ static int	count_map_elements(t_game *game)
 			else if (game->map[i][j] == 'P')
 			{
 				game->players_count++;
-				game->player_y = i;
-				game->player_x = j;
+				update_player_position(game, j, i);
 			}
 			else if (game->map[i][j] == 'E')
 				game->exits_count++;

@@ -14,9 +14,9 @@
 # define SO_LONG_H
 
 # include <fcntl.h>
+# include <stdlib.h>
+# include <unistd.h>
 # include "mlx.h"
-# include "ft_printf.h"
-# include "libft.h"
 
 # define TILE_SIZE 32
 # define KEY_ESC 65307
@@ -48,12 +48,21 @@ typedef struct s_game
 	void	*wall_img;
 	void	*floor_img;
 	void	*player_img;
+	void	*player_on_exit_img;
 	void	*collectible_img;
 	void	*exit_img;
 	int		player_moves;
-	int		exit_reached;
 }	t_game;
 
+void	ft_bzero(void *s, size_t n);
+size_t	ft_strlen(const char *s);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+char	*ft_strdup(const char *s1);
+char	*ft_itoa(int n);
+char	**ft_split(char const *s, char c);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+char	*ft_strjoin(char const *s1, char const *s2);
 int		validate_input(int argc, char *filename);
 int		parse_map(char *filename, t_game *game);
 void	print_error(char *message);
@@ -67,5 +76,6 @@ int		close_game(t_game *game);
 int		initialize_game(t_game *game);
 int		render_game(t_game *game);
 int		handle_keyboard_input(int keysym, t_game *game);
+void	update_player_position(t_game *game, int x, int y);
 
 #endif

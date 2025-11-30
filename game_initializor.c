@@ -21,7 +21,7 @@ static void	*load_sprite(t_game *game, char *path)
 	img = mlx_xpm_file_to_image(game->mlx_ptr, path, &x, &y);
 	if (!img)
 	{
-		ft_printf("Error\nFailed to load texture: %s\n", path);
+		print_error("Failed to load texture.");
 		return (NULL);
 	}
 	return (img);
@@ -47,6 +47,7 @@ static int	initialize_assets(t_game *game)
 	game->wall_img = load_sprite(game, "textures/wall.xpm");
 	game->exit_img = load_sprite(game, "textures/exit.xpm");
 	game->player_img = load_sprite(game, "textures/player.xpm");
+	game->player_on_exit_img = load_sprite(game, "textures/player_on_exit.xpm");
 	game->collectible_img = load_sprite(game, "textures/collectible.xpm");
 	if (!game->floor_img || !game->wall_img || !game->exit_img
 		|| !game->player_img || !game->collectible_img)
