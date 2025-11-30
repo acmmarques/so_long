@@ -12,6 +12,30 @@
 
 #include "so_long.h"
 
+static char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	size_t	i;
+	size_t	j;
+
+	if (*needle == '\0')
+		return ((char *)haystack);
+	i = 0;
+	while (haystack[i] != '\0' && len > 0)
+	{
+		j = 0;
+		while (haystack[i + j] == needle[j] && (len - j > 0))
+		{
+			if (needle[j + 1] == '\0')
+				return ((char *)&haystack[i]);
+			j++;
+		}
+		i++;
+		len--;
+	}
+	return (NULL);
+}
+
+
 static char	*read_file_content(char *filename)
 {
 	int		fd;
@@ -45,10 +69,9 @@ int	parse_map(char *filename, t_game *game)
 
 	raw_map = read_file_content(filename);
 	if (!raw_map)
-	{
-		print_error("Could not parse map");
-		return (0);
-	}
+		return (print_error("Could not parse map"), 0);
+	if (ft_strnstr(raw_map, "\n\n", ft_strlen(raw_map)) != NULL)
+		return (print_error("Invalid map. One or more empty lines"), 0);
 	game->map = ft_split(raw_map, '\n');
 	free(raw_map);
 	game->height = 0;
