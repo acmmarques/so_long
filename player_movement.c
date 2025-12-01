@@ -6,7 +6,7 @@
 /*   By: andcardo <andcardo@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 11:18:50 by andcardo          #+#    #+#             */
-/*   Updated: 2025/11/28 16:46:20 by andcardo         ###   ########.fr       */
+/*   Updated: 2025/12/01 19:21:21 by andcardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ static void	print_player_moves(int moves)
 	print_to_fd("Moves: ", 1);
 	print_to_fd(number_string, 1);
 	print_to_fd("\n", 1);
+	free(number_string);
 }
 
 static void	move_player(t_game *game, int next_x, int next_y)

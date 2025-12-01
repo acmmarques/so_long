@@ -6,7 +6,7 @@
 /*   By: andcardo <andcardo@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 21:04:49 by andcardo          #+#    #+#             */
-/*   Updated: 2025/11/27 22:55:41 by andcardo         ###   ########.fr       */
+/*   Updated: 2025/12/01 19:29:46 by andcardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ static void	free_assets(t_game *game)
 		mlx_destroy_image(game->mlx_ptr, game->wall_img);
 	if (game->player_img)
 		mlx_destroy_image(game->mlx_ptr, game->player_img);
+	if (game->player_on_exit_img)
+		mlx_destroy_image(game->mlx_ptr, game->player_on_exit_img);
 	if (game->collectible_img)
 		mlx_destroy_image(game->mlx_ptr, game->collectible_img);
 	if (game->exit_img)
@@ -51,7 +53,10 @@ static int	initialize_assets(t_game *game)
 	game->collectible_img = load_sprite(game, "textures/collectible.xpm");
 	if (!game->floor_img || !game->wall_img || !game->exit_img
 		|| !game->player_img || !game->collectible_img)
+	{
+		free_assets(game);
 		return (0);
+	}
 	return (1);
 }
 
