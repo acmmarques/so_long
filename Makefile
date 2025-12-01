@@ -1,12 +1,10 @@
 NAME = so_long
 
-# Source files
 SRCS = so_long.c input_validator.c map_parser.c helper.c helper_two.c \
 			map_validator.c game_initializor.c game_render.c player_movement.c \
 			libft_helper.c ft_itoa.c ft_split.c
 OBJS = $(SRCS:.c=.o)
 
-# Compiler and flags
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
