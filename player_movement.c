@@ -6,7 +6,7 @@
 /*   By: andcardo <andcardo@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 11:18:50 by andcardo          #+#    #+#             */
-/*   Updated: 2025/12/01 19:21:21 by andcardo         ###   ########.fr       */
+/*   Updated: 2025/12/01 20:41:16 by andcardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static void	move_player(t_game *game, int next_x, int next_y)
 	}
 	if (next_tile == 'E' && game->collectibles_count == 0)
 	{
-		print_to_fd("You won!", 1);
+		print_to_fd("You won! ", 1);
 		game->player_moves++;
 		print_player_moves(game->player_moves);
 		close_game(game);
