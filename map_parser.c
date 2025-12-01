@@ -6,7 +6,7 @@
 /*   By: andcardo <andcardo@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 12:37:08 by andcardo          #+#    #+#             */
-/*   Updated: 2025/11/29 17:57:47 by andcardo         ###   ########.fr       */
+/*   Updated: 2025/12/01 17:05:17 by andcardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ static char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
 
 static char	*read_file_content(char *filename)
 {
